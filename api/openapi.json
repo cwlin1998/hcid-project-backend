@@ -1,0 +1,718 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "HCID Backend",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000"
+    }
+  ],
+  "tags": [
+    {
+      "name": "plan",
+      "description": "Plans operations"
+    },
+    {
+      "name": "location",
+      "description": "Location operations"
+    },
+    {
+      "name": "user",
+      "description": "Users operations"
+    }
+  ],
+  "paths": {
+    "/plans": {
+      "post": {
+        "tags": [
+          "plan"
+        ],
+        "summary": "Add a new plan by the user",
+        "operationId": "addPlan",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/userAccount"
+        },
+        "responses": {
+          "201": {
+            "description": "Plan added",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/plans/{planId}": {
+      "get": {
+        "tags": [
+          "plan"
+        ],
+        "summary": "Get the plan",
+        "operationId": "getPlan",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/planId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Plan gotten",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plan"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "plan"
+        ],
+        "summary": "Add a new day to the plan",
+        "operationId": "addDay",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "planId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The plan ID"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Day added",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "plan"
+        ],
+        "summary": "Delete the plan",
+        "operationId": "deletePlan",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "planId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The plan ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Plan deleted",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/plans/{planId}/users": {
+      "put": {
+        "tags": [
+          "plan"
+        ],
+        "summary": "Add a new user to the plan",
+        "operationId": "addUser2Plan",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/planId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/userAccount"
+        },
+        "responses": {
+          "201": {
+            "description": "User added",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/plans/{planId}/users/{userAccount}": {
+      "delete": {
+        "tags": [
+          "plan"
+        ],
+        "summary": "Delete a user from the plan",
+        "operationId": "deleteUserFromPlan",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/planId"
+          },
+          {
+            "$ref": "#/components/parameters/userAccount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User deleted",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/plans/{planId}/{dayIndex}": {
+      "put": {
+        "tags": [
+          "plan"
+        ],
+        "summary": "Add the location to the day",
+        "operationId": "addLocation",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/planId"
+          },
+          {
+            "$ref": "#/components/parameters/dayIndex"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/destination"
+        },
+        "responses": {
+          "201": {
+            "description": "Location added",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "plan"
+        ],
+        "summary": "Delete the day from the plan",
+        "operationId": "deleteDay",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "planId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The plan ID"
+          },
+          {
+            "in": "path",
+            "name": "dayIndex",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "description": "The index of the day"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Day deleted",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/plans/{planId}/{dayIndex}/{locationId}": {
+      "delete": {
+        "tags": [
+          "plan"
+        ],
+        "summary": "Delete the location from the day",
+        "operationId": "deleteLocation",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/planId"
+          },
+          {
+            "$ref": "#/components/parameters/dayIndex"
+          },
+          {
+            "$ref": "#/components/parameters/locationId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Location deleted",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/locations": {
+      "get": {
+        "tags": [
+          "location"
+        ],
+        "summary": "Get locations filtered by query",
+        "operationId": "getLocations",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The search query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Locations gotten",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/Location"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/locations/{locationId}": {
+      "get": {
+        "tags": [
+          "location"
+        ],
+        "summary": "Get the location",
+        "operationId": "getLocation",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/locationId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Location gotten",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Location"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Add a new user",
+        "operationId": "addUser",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/user"
+        },
+        "responses": {
+          "201": {
+            "description": "User added",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/users/{userAccount}": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Get the user data of the user",
+        "operationId": "getUser",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/userAccount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User gotten",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Update the user data of the user",
+        "operationId": "updateUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userAccount",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The user account"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/user"
+        },
+        "responses": {
+          "200": {
+            "description": "User updated",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/users/{userAccount}/comment": {
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Add the comment to the user",
+        "operationId": "addComment",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/userAccount"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/comment"
+        },
+        "responses": {
+          "201": {
+            "description": "Comment added",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/users/{userAccount}/comment/{locationId}": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Get the comment of the location by the user",
+        "operationId": "getComment",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/userAccount"
+          },
+          {
+            "$ref": "#/components/parameters/locationId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Comment gotten",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Comment"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Update the comment of the location by the user",
+        "operationId": "updateComment",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/userAccount"
+          },
+          {
+            "$ref": "#/components/parameters/locationId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/comment"
+        },
+        "responses": {
+          "200": {
+            "description": "Comment updated",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Delete the comment of the location by the user",
+        "operationId": "deleteComment",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/userAccount"
+          },
+          {
+            "$ref": "#/components/parameters/locationId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Comment deleted",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Plan": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "img": {
+            "type": "string"
+          },
+          "destinations": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "img_path",
+          "destinations",
+          "users"
+        ]
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "locationId": {
+            "type": "string"
+          },
+          "img": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "coordinate": {
+            "type": "object",
+            "properties": {
+              "latitude": {
+                "type": "number",
+                "format": "double"
+              },
+              "longitude": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "nickname": {
+            "type": "string"
+          },
+          "plans": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comments": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Comment"
+            },
+            "description": "A map of **Comment** schemas, where the keys are IDs that correspond to the comment"
+          }
+        },
+        "required": [
+          "account",
+          "password",
+          "nickname"
+        ]
+      },
+      "Comment": {
+        "type": "object",
+        "properties": {
+          "locationId": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "locationId",
+          "rating"
+        ]
+      }
+    },
+    "parameters": {
+      "planId": {
+        "in": "path",
+        "name": "planId",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "The plan ID"
+      },
+      "dayIndex": {
+        "in": "path",
+        "name": "dayIndex",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "description": "The index of the day"
+      },
+      "locationId": {
+        "in": "path",
+        "name": "locationId",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "The location ID"
+      },
+      "userAccount": {
+        "in": "path",
+        "name": "userAccount",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "The user account"
+      }
+    },
+    "requestBodies": {
+      "userAccount": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "description": "The user account of the user",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user"
+              ]
+            }
+          }
+        }
+      },
+      "destination": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "destination": {
+                  "description": "The locationId of the destination",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "destination"
+              ]
+            }
+          }
+        }
+      },
+      "user": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/User"
+            }
+          }
+        }
+      },
+      "comment": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Comment"
+            }
+          }
+        }
+      }
+    }
+  }
+}
