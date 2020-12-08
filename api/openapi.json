@@ -532,7 +532,7 @@
         },
         "required": [
           "id",
-          "img_path",
+          "img",
           "destinations",
           "users"
         ]
@@ -540,7 +540,7 @@
       "Location": {
         "type": "object",
         "properties": {
-          "locationId": {
+          "id": {
             "type": "string"
           },
           "img": {
@@ -565,7 +565,14 @@
               }
             }
           }
-        }
+        },
+        "required": [
+          "id",
+          "img",
+          "name",
+          "address",
+          "coordinate"
+        ]
       },
       "User": {
         "type": "object",

@@ -9,7 +9,7 @@ exports.getPlans = _ => {
 exports.addPlan = user => {
   plan = {
     id: uuidv4(),
-    img_path: '',
+    img: '',
     destinations: [[]],
     users: [user]
   }

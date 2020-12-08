@@ -50,7 +50,7 @@ router.put('/:planId/:dayIndex', async(req, res) => {
   dayIndex = req.params.dayIndex
   des = req.body.destination
   await PlanService.addDestination(planId, dayIndex, des)
-  res.json(201)
+  res.status(201)
   res.json({})
 })
 
