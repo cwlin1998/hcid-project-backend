@@ -28,7 +28,13 @@ exports.addUser = user => {
 }
 
 exports.getUser = account => {
-  return userDatabase[account]
+  user = userDatabase[account]
+  commentArr = [] 
+  for (let [key, value] of Object.entries(user.comments)) {
+    commentArr.push(value)
+  }
+  user.comments = commentArr
+  return user
 }
 
 exports.updateUser = (account, user) => {
