@@ -28,7 +28,7 @@ exports.addUser = user => {
 }
 
 exports.getUser = account => {
-  user = userDatabase[account]
+  user = JSON.parse(JSON.stringify(userDatabase[account]))
   commentArr = [] 
   for (let [key, value] of Object.entries(user.comments)) {
     commentArr.push(value)

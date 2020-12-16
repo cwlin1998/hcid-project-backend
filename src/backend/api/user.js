@@ -26,7 +26,7 @@ router.patch('/:userAccount', async(req, res) => {
 
 router.put('/:userAccount/comment', async(req, res) => {
   await UserService.addComment(req.params.userAccount, req.body)
-  res.json(201)
+  res.status(201)
   res.json({})
 })
 
