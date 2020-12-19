@@ -275,6 +275,38 @@
       }
     },
     "/users": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Get users",
+        "operationId": "getUsers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The search query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Users gotten",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "post": {
         "tags": [
           "user"
