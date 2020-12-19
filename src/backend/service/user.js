@@ -41,6 +41,9 @@ exports.addUser = user => {
 }
 
 exports.getUser = account => {
+  if (!userDatabase[account]) {
+    throw "user not found"
+  }
   user = JSON.parse(JSON.stringify(userDatabase[account]))
   commentArr = [] 
   for (let [key, value] of Object.entries(user.comments)) {
