@@ -6,10 +6,11 @@ exports.getPlans = _ => {
   return planDatabase
 }
 
-exports.addPlan = user => {
+exports.addPlan = (user, name) => {
   plan = {
     id: uuidv4(),
     img: '',
+    name: name,
     destinations: [[]],
     users: [user]
   }
@@ -23,6 +24,10 @@ exports.getPlan = id => {
 
 exports.addDay = id => {
   planDatabase[id].destinations.push([])
+}
+
+exports.updatePlan = (id, plan) => {
+  planDatabase[id] = plan
 }
 
 exports.deletePlan = id => {

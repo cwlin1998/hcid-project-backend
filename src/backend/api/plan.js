@@ -10,7 +10,7 @@ router.get('/', async(req, res) => {
 })
 
 router.post('/', async(req, res) => {
-  plan = await PlanService.addPlan(req.body.user)
+  plan = await PlanService.addPlan(req.body.user, req.body.name)
   await UserService.addUser2Plan(plan.id, req.body.user)
   res.status(201)
   res.json({})
@@ -24,6 +24,11 @@ router.get('/:planId', async(req, res) => {
 router.post('/:planId', async(req, res) => {
   await PlanService.addDay(req.params.planId)
   res.status(201)
+  res.json({})
+})
+
+router.patch('/:planId', async(req, res) => {
+  await PlanService.updatePlan(req.params.planId, req.body)
   res.json({})
 })
 

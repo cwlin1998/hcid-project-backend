@@ -15,10 +15,6 @@
       "description": "Plans operations"
     },
     {
-      "name": "location",
-      "description": "Location operations"
-    },
-    {
       "name": "user",
       "description": "Users operations"
     }
@@ -32,7 +28,7 @@
         "summary": "Add a new plan by the user",
         "operationId": "addPlan",
         "requestBody": {
-          "$ref": "#/components/requestBodies/userAccount"
+          "$ref": "#/components/requestBodies/userAccountAndPlanName"
         },
         "responses": {
           "201": {
@@ -77,18 +73,35 @@
         "operationId": "addDay",
         "parameters": [
           {
-            "in": "path",
-            "name": "planId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "The plan ID"
+            "$ref": "#/components/parameters/planId"
           }
         ],
         "responses": {
           "201": {
             "description": "Day added",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "plan"
+        ],
+        "summary": "Update the plan",
+        "operationId": "updatePlan",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/planId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/plan"
+        },
+        "responses": {
+          "200": {
+            "description": "Plan updated",
             "content": {
               "application/json": {}
             }
@@ -103,13 +116,7 @@
         "operationId": "deletePlan",
         "parameters": [
           {
-            "in": "path",
-            "name": "planId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "The plan ID"
+            "$ref": "#/components/parameters/planId"
           }
         ],
         "responses": {
@@ -259,66 +266,6 @@
             "description": "Location deleted",
             "content": {
               "application/json": {}
-            }
-          }
-        }
-      }
-    },
-    "/locations": {
-      "get": {
-        "tags": [
-          "location"
-        ],
-        "summary": "Get locations filtered by query",
-        "operationId": "getLocations",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "q",
-            "schema": {
-              "type": "string"
-            },
-            "description": "The search query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Locations gotten",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "$ref": "#/components/schemas/Location"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/locations/{locationId}": {
-      "get": {
-        "tags": [
-          "location"
-        ],
-        "summary": "Get the location",
-        "operationId": "getLocation",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/locationId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Location gotten",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Location"
-                }
-              }
             }
           }
         }
@@ -514,6 +461,9 @@
           "img": {
             "type": "string"
           },
+          "name": {
+            "type": "string"
+          },
           "destinations": {
             "type": "array",
             "items": {
@@ -532,46 +482,10 @@
         },
         "required": [
           "id",
+          "name",
           "img",
           "destinations",
           "users"
-        ]
-      },
-      "Location": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "img": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "address": {
-            "type": "string"
-          },
-          "coordinate": {
-            "type": "object",
-            "properties": {
-              "latitude": {
-                "type": "number",
-                "format": "double"
-              },
-              "longitude": {
-                "type": "number",
-                "format": "double"
-              }
-            }
-          }
-        },
-        "required": [
-          "id",
-          "img",
-          "name",
-          "address",
-          "coordinate"
         ]
       },
       "User": {
@@ -684,6 +598,29 @@
           }
         }
       },
+      "userAccountAndPlanName": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "description": "The user account of the user",
+                  "type": "string"
+                },
+                "name": {
+                  "description": "The name of the plan",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user",
+                "name"
+              ]
+            }
+          }
+        }
+      },
       "destination": {
         "content": {
           "application/json": {
@@ -698,6 +635,15 @@
               "required": [
                 "destination"
               ]
+            }
+          }
+        }
+      },
+      "plan": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Plan"
             }
           }
         }
