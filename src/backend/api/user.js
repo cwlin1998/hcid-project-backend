@@ -17,11 +17,11 @@ router.post('/', async(req, res) => {
 router.get('/:userAccount', async(req, res) => {
   try {
     user = await UserService.getUser(req.params.userAccount)
-  } catch(e) {
+    res.json(user)
+  } catch (e) {
     res.status(404)
     res.send(e)
   }
-  res.json(user)
 })
 
 router.patch('/:userAccount', async(req, res) => {

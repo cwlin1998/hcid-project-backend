@@ -26,7 +26,7 @@ exports.getUsers = q => {
       if (q == key.substring(0, q.length)) {
         users.push(value)
       }
-      if (users.length >= 5) {
+      if (users.length >= 10) {
         return users
       }
     }
@@ -44,13 +44,7 @@ exports.getUser = account => {
   if (!userDatabase[account]) {
     throw "user not found"
   }
-  user = JSON.parse(JSON.stringify(userDatabase[account]))
-  commentArr = [] 
-  for (let [key, value] of Object.entries(user.comments)) {
-    commentArr.push(value)
-  }
-  user.comments = commentArr
-  return user
+  return userDatabase[account]
 }
 
 exports.updateUser = (account, user) => {
