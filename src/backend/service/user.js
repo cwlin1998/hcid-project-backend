@@ -17,8 +17,21 @@ exports.deleteUserFromPlan = (planId, userAccount) => {
   userDatabase[userAccount].plans.splice(index, 1)
 }
 
-exports.getUsers = _ => {
-  return userDatabase
+exports.getUsers = q => {
+  if (!q) {
+    return userDatabase
+  } else {
+    users = []
+    for (let [key, value] of Object.entries(userDatabase)) {
+      if (q == key.substring(0, q.length)) {
+        users.push(value)
+      }
+      if (users.length >= 5) {
+        return users
+      }
+    }
+    return users
+  }
 }
 
 exports.addUser = user => {

@@ -4,7 +4,7 @@ var UserService = require('../service/user')
 var router = express.Router()
 
 router.get('/', async(req, res) => {
-  users = await UserService.getUsers()
+  users = await UserService.getUsers(req.query.q)
   res.json(users)
 })
 
