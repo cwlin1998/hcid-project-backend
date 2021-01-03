@@ -13,7 +13,7 @@
 
 /* Colors
 
-Primary:                                #FF5800
+Primary:                                #2BB9DE
 Primary Shade:                          #c84600
 Text:                                   #7a7c82
 Grey:                                   #eee
@@ -123,7 +123,7 @@ h6 {
 
 h1,
 h2 {
-    color: #FF5800;
+    color: #2BB9DE;
 }
 
 h3,
@@ -181,11 +181,11 @@ blockquote {
 }
 
 span {
-    color: #FF5800;
+    color: #2BB9DE;
 }
 
 a {
-    color: #FF5800;
+    color: #2BB9DE;
 }
 
 a:hover,
@@ -210,7 +210,7 @@ a:focus {
 .title-underline {
     height: 3px;
     width: 70px;
-    background-color: #ff5800;
+    background-color: #2BB9DE;
     margin-top: 5px;
     margin-bottom: 30px;
     margin-left: 0px;
@@ -219,7 +219,7 @@ a:focus {
 .title-underline-center {
     height: 3px;
     width: 70px;
-    background-color: #ff5800;
+    background-color: #2BB9DE;
     margin-top: 5px;
     margin-bottom: 30px;
 }
@@ -248,7 +248,7 @@ a:focus {
 /* Icons */
 
 .box-icon {
-    color: #ff5800;
+    color: #2BB9DE;
     position: relative;
     line-height: 0px;
     font-size: 36px;
@@ -269,7 +269,7 @@ a:focus {
 /* Buttons */
 
 .btn-primary {
-    background-color: #FF5800;
+    background-color: #2BB9DE;
     border-color: #c84600;
     color: #FFF;
     outline: none;
@@ -279,7 +279,7 @@ a:focus {
 .btn-primary.focus {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     cursor: pointer;
     outline: none;
 }
@@ -287,7 +287,7 @@ a:focus {
 .btn-primary:hover {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     outline: none;
 }
 
@@ -296,7 +296,7 @@ a:focus {
 .open > .dropdown-toggle.btn-primary {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     outline: none;
 }
 
@@ -308,12 +308,12 @@ a:focus {
 .btn-primary.active.focus {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     outline: none;
 }
 
 .btn-default {
-    background-color: #FF5800;
+    background-color: #2BB9DE;
     border-color: #c84600;
     color: #FFF;
     outline: none;
@@ -323,7 +323,7 @@ a:focus {
 .btn-default.focus {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     cursor: pointer;
     outline: none;
 }
@@ -331,7 +331,7 @@ a:focus {
 .btn-default:hover {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     outline: none;
 }
 
@@ -340,7 +340,7 @@ a:focus {
 .open > .dropdown-toggle.btn-default {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     outline: none;
 }
 
@@ -352,7 +352,7 @@ a:focus {
 .btn-default.active.focus {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     outline: none;
 }
 
@@ -362,7 +362,7 @@ a:focus {
 }
 
 .btn-link {
-    color: #FF5800;
+    color: #2BB9DE;
 }
 
 
@@ -391,7 +391,7 @@ a:focus {
 /* Progressbar */
 
 .progress-bar {
-    background-color: #ff5800;
+    background-color: #2BB9DE;
     line-height: 15px;
 }
 
@@ -414,7 +414,7 @@ a:focus {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-    background-color: #ff5800;
+    background-color: #2BB9DE;
     color: #fff;
 }
 
@@ -435,8 +435,8 @@ a:focus {
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-    background-color: #ff5800;
-    border-color: #ff5800;
+    background-color: #2BB9DE;
+    border-color: #2BB9DE;
 }
 
 .pagination > li > a,
@@ -448,14 +448,14 @@ a:focus {
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-    color: #ff5800;
+    color: #2BB9DE;
 }
 
 
 /* Labels */
 
 .label-primary {
-    background-color: #ff5800;
+    background-color: #2BB9DE;
 }
 
 
@@ -464,12 +464,12 @@ a:focus {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-    background-color: #ff5800;
+    background-color: #2BB9DE;
 }
 
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-    color: #ff5800;
+    color: #2BB9DE;
 }
 
 
@@ -478,8 +478,8 @@ a:focus {
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
-    background-color: #ff5800;
-    border-color: #ff5800;
+    background-color: #2BB9DE;
+    border-color: #2BB9DE;
 }
 
 .list-group-item.active .list-group-item-text,
@@ -492,12 +492,12 @@ a:focus {
 /* Panels */
 
 .panel-primary > .panel-heading {
-    background-color: #ff5800;
-    border-color: #ff5800;
+    background-color: #2BB9DE;
+    border-color: #2BB9DE;
 }
 
 .panel-primary {
-    border-color: #ff5800;
+    border-color: #2BB9DE;
 }
 
 
@@ -722,12 +722,12 @@ a:focus {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     background-color: initial;
-    color: #FF5800;
+    color: #2BB9DE;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #FF5800;
+    color: #2BB9DE;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -745,12 +745,12 @@ a:focus {
     .dropdown-menu > .active > a:hover,
     .dropdown-menu > .active > a:focus {
         color: #fff;
-        background-color: #FF5800;
+        background-color: #2BB9DE;
     }
     .dropdown-menu > li > a:hover,
     .dropdown-menu > li > a:focus {
         color: #fff;
-        background-color: #FF5800;
+        background-color: #2BB9DE;
     }
     .dropdown-menu li a {
         width: 200px;
@@ -768,7 +768,7 @@ a:focus {
     font-weight: 600;
     padding: 6px 15px;
     font-size: 16px;
-    color: #FF5800;
+    color: #2BB9DE;
 }
 
 
@@ -925,7 +925,7 @@ a:focus {
 /* ------------------------------------------ */
 
 .sidebar-header {
-    color: #FF5800;
+    color: #2BB9DE;
 }
 
 .sidebar .nav > li > a {
@@ -986,7 +986,7 @@ a:focus {
 }
 
 .page-header h1 {
-    border-bottom: 5px solid #FF5800;
+    border-bottom: 5px solid #2BB9DE;
     color: #FFF;
     display: inline-block;
     font-weight: 600;
@@ -1099,7 +1099,7 @@ a:focus {
 }
 
 .cta-primary {
-    background-color: #ff5800;
+    background-color: #2BB9DE;
 }
 
 .cta-primary p {
@@ -1109,7 +1109,7 @@ a:focus {
 .cta-primary .btn-primary {
     background-color: #fff;
     border-color: #c84600;
-    color: #ff5800;
+    color: #2BB9DE;
     outline: none;
 }
 
@@ -1117,7 +1117,7 @@ a:focus {
 .cta-primary .btn-primary.focus {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     cursor: pointer;
     outline: none;
 }
@@ -1125,7 +1125,7 @@ a:focus {
 .cta-primary .btn-primary:hover {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     outline: none;
 }
 
@@ -1133,7 +1133,7 @@ a:focus {
 .cta-primary .btn-primary.activey {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     outline: none;
 }
 
@@ -1145,7 +1145,7 @@ a:focus {
 .btn-primary.active.focus {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     outline: none;
 }
 
@@ -1167,7 +1167,7 @@ a:focus {
 .intro .fa {
     display: block;
     font-size: 42px;
-    color: #ff5800;
+    color: #2BB9DE;
 }
 
 .intro label {
@@ -1186,7 +1186,7 @@ a:focus {
 .feature .fa {
     display: block;
     font-size: 64px;
-    color: #ff5800;
+    color: #2BB9DE;
     margin-bottom: 14px;
 }
 
@@ -1203,7 +1203,7 @@ a:focus {
 }
 
 .feature-box .feature-box-icon {
-    background: #ff5800;
+    background: #2BB9DE;
     border-radius: 35px;
     color: #FFF;
     display: inline-block;
@@ -1315,7 +1315,7 @@ a:focus {
 }
 
 .product .type {
-    background-color: #FF5800;
+    background-color: #2BB9DE;
     padding: 20px 20px;
     font-weight: 900;
     text-transform: uppercase;
@@ -1333,7 +1333,7 @@ a:focus {
 .popular .pricing-footer .btn-primary {
     background-color: #fff;
     border-color: #c84600;
-    color: #ff5800;
+    color: #2BB9DE;
     outline: none;
 }
 
@@ -1341,7 +1341,7 @@ a:focus {
 .popular .pricing-footer .btn-primary.focus {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     cursor: pointer;
     outline: none;
 }
@@ -1349,7 +1349,7 @@ a:focus {
 .popular .pricing-footer .btn-primary:hover {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     outline: none;
 }
 
@@ -1357,7 +1357,7 @@ a:focus {
 .popular .pricing-footer .btn-primary.activey {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     outline: none;
 }
 
@@ -1369,7 +1369,7 @@ a:focus {
 .popular .pricing-footer .btn-primary.active.focus {
     color: #fff;
     background-color: #c84600;
-    border-color: #FF5800;
+    border-color: #2BB9DE;
     outline: none;
 }
 
@@ -1398,7 +1398,7 @@ a:focus {
 
 .product.popular {
     margin-top: -20px;
-    background-color: #ff5800;
+    background-color: #2BB9DE;
 }
 
 
@@ -1825,7 +1825,7 @@ ul.filter > li > a:focus {
 }
 
 ul.filter > li.active a {
-    color: #FF5800;
+    color: #2BB9DE;
 }
 
 ul.filter > li span {
@@ -2006,7 +2006,7 @@ ul.filter > li span {
 .portfolio-section .info-head h3 {
     font-size: 26px;
     line-height: 20px;
-    color: #FF5800;
+    color: #2BB9DE;
 }
 
 .portfolio-section .info-head h4 {
@@ -2358,10 +2358,10 @@ only screen and (min-device-pixel-ratio: 1.5) {
 -------------------------------------------------- */
 
 .owl-theme .owl-nav [class*="owl-"] {
-    background: #FF5800!important;
+    background: #2BB9DE!important;
 }
 
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
-    background: #FF5800!important;
+    background: #2BB9DE!important;
 }
