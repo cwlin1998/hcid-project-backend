@@ -14,7 +14,7 @@
 /* Colors
 
 Primary:                                #2BB9DE
-Primary Shade:                          #c84600
+Primary Shade:                          #23527c
 Text:                                   #7a7c82
 Grey:                                   #eee
 Dark Grey:                              #333
@@ -190,7 +190,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #c84600;
+    color: #23527c;
     text-decoration: none;
     outline: none
 }
@@ -270,7 +270,7 @@ a:focus {
 
 .btn-primary {
     background-color: #2BB9DE;
-    border-color: #c84600;
+    border-color: #23527c;
     color: #FFF;
     outline: none;
 }
@@ -278,7 +278,7 @@ a:focus {
 .btn-primary:focus,
 .btn-primary.focus {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     cursor: pointer;
     outline: none;
@@ -286,7 +286,7 @@ a:focus {
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     outline: none;
 }
@@ -295,7 +295,7 @@ a:focus {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     outline: none;
 }
@@ -307,14 +307,14 @@ a:focus {
 .btn-primary:active.focus,
 .btn-primary.active.focus {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     outline: none;
 }
 
 .btn-default {
     background-color: #2BB9DE;
-    border-color: #c84600;
+    border-color: #23527c;
     color: #FFF;
     outline: none;
 }
@@ -322,7 +322,7 @@ a:focus {
 .btn-default:focus,
 .btn-default.focus {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     cursor: pointer;
     outline: none;
@@ -330,7 +330,7 @@ a:focus {
 
 .btn-default:hover {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     outline: none;
 }
@@ -339,7 +339,7 @@ a:focus {
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     outline: none;
 }
@@ -351,7 +351,7 @@ a:focus {
 .btn-default:active.focus,
 .btn-default.active.focus {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     outline: none;
 }
@@ -1108,7 +1108,7 @@ a:focus {
 
 .cta-primary .btn-primary {
     background-color: #fff;
-    border-color: #c84600;
+    border-color: #23527c;
     color: #2BB9DE;
     outline: none;
 }
@@ -1116,7 +1116,7 @@ a:focus {
 .cta-primary .btn-primary:focus,
 .cta-primary .btn-primary.focus {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     cursor: pointer;
     outline: none;
@@ -1124,7 +1124,7 @@ a:focus {
 
 .cta-primary .btn-primary:hover {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     outline: none;
 }
@@ -1132,7 +1132,7 @@ a:focus {
 .cta-primary .btn-primary:active,
 .cta-primary .btn-primary.activey {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     outline: none;
 }
@@ -1144,7 +1144,7 @@ a:focus {
 .cta-primary .btn-primary:active.focus,
 .btn-primary.active.focus {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     outline: none;
 }
@@ -1332,7 +1332,7 @@ a:focus {
 
 .popular .pricing-footer .btn-primary {
     background-color: #fff;
-    border-color: #c84600;
+    border-color: #23527c;
     color: #2BB9DE;
     outline: none;
 }
@@ -1340,7 +1340,7 @@ a:focus {
 .popular .pricing-footer .btn-primary:focus,
 .popular .pricing-footer .btn-primary.focus {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     cursor: pointer;
     outline: none;
@@ -1348,7 +1348,7 @@ a:focus {
 
 .popular .pricing-footer .btn-primary:hover {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     outline: none;
 }
@@ -1356,7 +1356,7 @@ a:focus {
 .popular .pricing-footer .btn-primary:active,
 .popular .pricing-footer .btn-primary.activey {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     outline: none;
 }
@@ -1368,7 +1368,7 @@ a:focus {
 .popular .pricing-footer .btn-primary:active.focus,
 .popular .pricing-footer .btn-primary.active.focus {
     color: #fff;
-    background-color: #c84600;
+    background-color: #23527c;
     border-color: #2BB9DE;
     outline: none;
 }
@@ -1820,7 +1820,7 @@ ul.filter > li > a {
 ul.filter > li > a:hover,
 ul.filter > li > a:focus {
     text-decoration: none;
-    color: #c84600;
+    color: #23527c;
     outline: none
 }
 
